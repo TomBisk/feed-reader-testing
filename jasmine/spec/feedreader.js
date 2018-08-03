@@ -14,12 +14,9 @@ $(function() {
     * feeds definitions, the allFeeds variable in our application.
     */
     describe('RSS Feeds', function() {
-        /* This is our first test - it tests to make sure that the
+        /* It tests to make sure that the
          * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
+         * empty. 
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
@@ -101,12 +98,25 @@ $(function() {
 	 * function loadFeed()
 	 */
 	describe('New Feed Selection', function() {
-		
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
+        /* It tests  that the content actually changes
+         * when a new feed is loaded by the loadFeed()
          */
-	
-	
+		let feed0, feed1;
+		
+		beforeEach(function(done) {
+			loadFeed(0, function() {
+				feed0 = document.querySelector('.header-title').innerText;
+				loadFeed(1, function() {
+					feed1 = document.querySelector('.header-title').innerText;
+					done();
+				});
+			});
+			
+		});
+		
+		it('changes the content when new feed is loaded', function(done) {
+			expect(feed0).not.toEqual(feed1);
+			done();
+		});
 	});
 }());
