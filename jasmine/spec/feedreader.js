@@ -9,14 +9,13 @@
  * to ensure they don't run until the DOM is ready.
  */
 $(function() {
-    /* This is our first test suite - a test suite just contains
-    * a related set of tests. This suite is all about the RSS
-    * feeds definitions, the allFeeds variable in our application.
+    /* Test suite just contains a related set of tests.
+    *  This suite is all about the RSS feeds definitions,
+    *  the allFeeds variable in our application.
     */
     describe('RSS Feeds', function() {
-        /* It tests to make sure that the
-         * allFeeds variable has been defined and that it is not
-         * empty. 
+        /* It tests to make sure that the allFeeds variable has
+         * been defined and that it is not empty. 
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
@@ -47,7 +46,6 @@ $(function() {
 			});
 		});
     });
-
 
     /* Test suite which contains set of tests for the Menu,
 	 *to tests its default state and when it's clicked.
