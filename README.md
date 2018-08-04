@@ -11,6 +11,7 @@ To run locally:
 Tests runs automatically and tests results are located at the bottom of the page.
 If You want to run tests separately, just click proper test suite name or specific test.
 All tests should be passed.
+
 ---
 
 ### Tests specification
